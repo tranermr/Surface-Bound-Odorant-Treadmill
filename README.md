@@ -4,13 +4,16 @@ One of the important subsets of odors sources used in olfactory navigation is su
 
 ![Photo of assembled treadmill](/TreadmillPublishedDesign.png)
 
+The treadmill is designed to enable long-duration interactions with surface-bound odor trails of arbitrary length. Below you can see a video of a locust engaged in a bout of trail following with an odor trail, where the treadmill advances once the locust approaches the front of the behavior chamber, revealing more trail for the locust to interact wtih.
+
+![Video of locust following an odor trail](/zigzagTrailFollowing.mp4)
+
 The treadmill is comprised of a series of modules sequentially connected and mounted on an 80-20 frame enabling different slopes to be configured. The design of the mechanical components is provided as an .f3d file, openable using Fusion 360, which is available in [educational](https://www.autodesk.com/campaigns/education/fusion-360-education), or [professional or free versions](https://www.autodesk.com/products/fusion-360/personal/compare). 
 
-In the mechanical design file, the design is organized by modules, with the exception of the 'behavior chamber' and 'driver' modules, which are merged in the present design. The organizational structure is arranged to reflect all modules independently for any future revisions. 
+In the mechanical design file, the design is organized by modules, with the exception of the 'behavior chamber' and 'driver' modules, which are merged in the present design. The organizational structure is arranged to reflect all modules independently for any future revisions. Further details regarding each of the design categories is provided below.
 
 ![Treadmill modules, and top view of behavior chamber](/TreadmillModules.png)
 
-Further details regarding each of the design categories is provided below.
 
 ## Mechanical Components
 asdf
