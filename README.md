@@ -27,3 +27,15 @@ asdf
 ### Python Software Script
 asdf
 
+# Considerations for building
+types of printer (reference whatshisface), stepper vs encoder, etc.
+
+# Suggested directions for future expansion
+two printheads
+inkjet module
+stepper motor controls
+reward printer (behavior chamber front slot will need to be expanded)
+
+
+
+
