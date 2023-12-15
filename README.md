@@ -10,7 +10,7 @@ In the file, the design is organized by modules, with the exception of the 'beha
 
 ![Treadmill modules, and top view of behavior chamber](/TreadmillModules.png)
 
-In addition to the mechanical components, the electrical PCB design files are provided in the form of a KiCAD project (KiCAD is open source and available [here](https://www.kicad.org/download/)), and the firmware and software to operate the treadmill, as well as matlab scripts for parsing generated data. Further details regarding each of these categories is provided below.
+In addition to the mechanical components, the electrical PCB design files are provided in the form of a KiCAD project (KiCAD is open source and available [here](https://www.kicad.org/download/)), and the firmware and software to operate the treadmill are stored in the software, as well as matlab scripts for parsing generated data in the analysis folder. Further details regarding each of these categories is provided below.
 
 ## Mechanical Components
 asdf
