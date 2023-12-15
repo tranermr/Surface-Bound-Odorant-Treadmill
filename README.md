@@ -1,6 +1,6 @@
 # Surface-Bound-Odorant-Treadmill
 
-One of the important subsets of odors sources used in olfactory navigation is surface-bound sources, which can broadly take the form of point sources or trails. Here, we present an automated treadmill design capable of dynamically printing odor trails of arbitrary lengths and configurations, and with closed-loop control of speed based on the animal’s movement. This design is presented and the utility demonstrated in a corresponding paper studying surface-bound odor trail interactions in locusts (in submission).The uploaded design incorporates some improvements not reflected in the version used in the published paper (i.e. the modification of some components to reduce paper jams, and quality of life improvements).
+One of the important subsets of odors sources used in olfactory navigation is surface-bound sources, which can broadly take the form of point sources or trails. Here, we present an automated treadmill design capable of dynamically printing odor trails of arbitrary lengths and configurations, and with closed-loop control of speed based on the animal’s movement. This design is presented and the utility demonstrated in a corresponding paper studying surface-bound odor trail interactions in locusts (in submission).The uploaded design incorporates some improvements not reflected in the version used in the published paper (i.e. the modification of some components to reduce paper jams, and quality of life improvements). The design is provided in four directories, containing the mechanical components, the electrical component design, the software and firmware for operation, and matlab scripts for parsing the output files.
 
 ![Photo of assembled treadmill](/TreadmillPublishedDesign.png)
 
@@ -10,7 +10,7 @@ In the file, the design is organized by modules, with the exception of the 'beha
 
 ![Treadmill modules, and top view of behavior chamber](/TreadmillModules.png)
 
-In addition to the mechanical components, the electrical PCB design files are provided in the form of a KiCAD project (KiCAD is open source and available [here](https://www.kicad.org/download/)), and the firmware and software to operate the treadmill are stored in the software, as well as matlab scripts for parsing generated data in the analysis folder. Further details regarding each of these categories is provided below.
+In addition to the mechanical components, the electrical PCB design files are provided in the form of a KiCAD project (KiCAD is open source and available [here](https://www.kicad.org/download/)), and the firmware and software to operate the treadmill are stored in the software directory, as well as matlab scripts for parsing generated data in the analysis folder. Further details regarding each of these categories is provided below.
 
 ## Mechanical Components
 asdf
