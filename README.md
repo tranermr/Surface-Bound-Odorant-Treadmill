@@ -15,7 +15,7 @@ In the mechanical design file, the design is organized by modules, with the exce
 ![Treadmill modules, and top view of behavior chamber](/DocumentationMedia/TreadmillModules.png)
 
 ## Mechanical Components
-The components of each treadmill module are broken out below, in addition to 
+The components of each treadmill module are broken out below. Each module section contains a list of the parts not 3D printed or laser cut from acrylic, as well as suggestions to ease assembly.
 
 ### Frame
 The treadmill frame is made of 20mm extruded aluminum (2020). The recommended parts list for the frame is
@@ -24,7 +24,7 @@ The treadmill frame is made of 20mm extruded aluminum (2020). The recommended pa
 | Description				| Part Number 		| Quantity|
 | ------------- 			|:-------------:	| -----:|
 | Aluminum Extrusions 			| HFS5-2020-1500 	| 6 	|
-| Aluminum 20mm Brace - threaded	| HBLFSNF5-C-SEC 	|   4 	|
+| Aluminum 20mm Brace - optional	| HBLFSNF5-C-SEC 	|   8 	|
 | Square Nuts (100 Pack)		| HNKK5-5      		|   2 	|
 | Hinges 				| HHPSN5-SET      	|   2 	|
 
@@ -37,27 +37,147 @@ The treadmill frame is made of 20mm extruded aluminum (2020). The recommended pa
 <ins>Amazon</ins>
 | Description			| Part Number 		| Quantity|
 | ------------- 		|:-------------:	| -----:|
-| Aluminum 20mm Brace (20 Pack)	| [20mm m5 compatible](https://www.amazon.com/Bracket-Aluminum-Brackets-Extrusion-Profile/dp)	| 3 	|
+| Aluminum 20mm Brace (20 Pack)	| [20mm m5 compatible](https://a.co/d/7hRMjW2)	| 3 	|
 
-If cutting yourself, a chopsaw and an aluminum cutting blade (e.g. Tomax aluminum blade) will make accurate cuts to the correct length substantially faster and easier.
+If cutting yourself, a chopsaw and an aluminum cutting blade (e.g. [Tomax aluminum blade](https://a.co/d/3ZllS9o)) will will greatly ease making accurate and fast cuts compared to a hacksaw.
+
+The HBLFSNF5 braces are optional because while they were used to mount the acrylic components of the evaporation tunnel to the aluminum frame, it is just as practical to mount to the alumium extrusion directly. They are included as an option, but are not suggested.
 
 ### Paper Towel Dispenser
-asdf
+The paper towel dispenser is constructed of two vertical mounting bars. The paper towel is hung between the bars on a 1/4" threaded rod, with tension applied to the side of the mount using a compressed spring adjustable via a pair of wingnuts. The position of the two bars (and thereby the alignment of the paper towel with the rig) can be adjusted by advancing or retracting one side or the other using the adjustment screws on the sides. 
 
-### Print Assembly
-asdf
+<ins>Amazon</ins>
+| Description			| Part Number 		| Quantity|
+| ------------- 		|:-------------:	| -----:|
+| MGN12H 300mm linear rail guide| [MGN12H Rail](https://a.co/d/gDsAsOn)	| 2 	|
+| MGN12H Carriage Block		| [MGN12H Carriage Block(https://a.co/d/gDsAsOn)	| 4 	|
+| Spring Set			| [SP 9702](https://a.co/d/3PLaYax)	| 1 	|
+| Bearing set			| [6202-2RS](https://a.co/d/721F6t8)	| 4 	|
+
+<ins>Hardware Store (or Amazon, etc.)</ins>
+| Description			| Part Number 		| Quantity|
+| ------------- 		|:-------------:	| -----:|
+| 1/4" Threaded Rod 1 foot long	| na			| 3 	|
+| 1/4" Nuts			| na			| 20 	|
+| 1/4" Wingnuts			| na			| 3 	|
+
+<ins>Grainger</ins>
+| Description			| Part Number 		| Quantity|
+| ------------- 		|:-------------:	| -----:|
+| 1/4" Fender Washers		| 35YU76		| 2 	|
+
+<ins>Assembly of left, right alignment adjustments.</ins>
+In the following assembly guides 3D printed components are placed in quotes and referred to by their body names in the Fusion 360 file.
+
+The alignment assemblies consist of 1x 1' threaded rod, with the following parts threaded on in sequence, pictured below: 
+ - Assembly 1: hex nut - "AlignmentScrewInner" - 6202 bearing - "AlignmentScrewInner" - hex nut 
+ - Assembly 2: hex nut - spring - hex nut 
+ - Assembly 3: hex nut - "AlignmentScrewInner" - 6202 bearing - "AlignmentScrewInner" - hex nut 
+ - Assembly 4: hex nut - wing nut
+
+![Left/right alignment assemblies](/DocumentationMedia/AlignmentAssembly.png)
+
+Assemblies 1 and 3 hold the threaded rod and allow rotation.
+Assembly 2 is clamped by the "AlignmentBoltClamp" that moves the vertical mounting bar forward or backwards as the threaded rod is rotated. The spring compressed between the two bolts serves to prevent backlash and reduce wobble in the assembly; this is pictured below.
+Assembly 4 provides an easy way to rotate the threaded rod, by locking the wing nut in place using the hex nut.
+
+![Vertical bar linkage - Assembly 2](/DocumentationMedia/AntiBacklashAssembly.png)
+
+<ins>Assembly of paper towel suspension rod.</ins>
+The alignment assemblies consist of 1x 1' threaded rod, with the following parts threaded on in sequence, pictured below: 
+ - Assembly 1: wing nut - "PaperTowelHolderBrace" - hex nut 
+ - Assembly 2: hex nut - "PaperTowelInsertInner" - hex nut 
+ - Assembly 3: hex nut - "PaperTowelInsertInner" - fender washer - spring - fender washer - hex nut - hex nut
+ - Assembly 4: hex nut - "PaperTowelHolderBrace" - hex nut 
+
+![Paper towel suspension rod](/DocumentationMedia/PaperTowelRod.png)
+
+Assembly 1 holds the threaded rod, but allows the brace to be removed for changing the paper towel roll.
+Assembly 2 holds the inner insert for the bearing on which the paper towel pivots.
+Assembly 3 holds the inner insert for the second bearing on which the paper towel pivots. In addition, the fender washer compressed against the "TowelInsertOuter" provides friction which tensions the paper towel. By adjusting compression on the spring (or switching to a different spring) the paper towel tension can be tuned to keep the paper towel taut, but minimally burden the driver motor.
+Assembly 4 holds the threaded rod.
+
+### Print Carriage Assembly
+The print assembly is centered around the print carriage assembly removed from an HP Photosmart C6180 inkjet printer. The inkjet printing assembly is removed, and the "PrintCarriageInsert" is inserted in its place. 
+
+![Print carriage insert](/DocumentationMedia/PrintCarriageInsert.png)
+
+The linear encoder from the print carriage PCB is accessed by connecting to the following pins on the ribbon cable: X X X X 
+This was achieved by producing a breakout board on a piece of FR-4 Copper Clad board, soldering on a compatible ribbon cable mount, and soldering on male 2.54 header pins (pictured below). However, soldering wires directly instead of the pins would reduce risk of accidental disconnection. The traces on the print carriage PCB can also be soldered to directly to avoid needing to construct an adapter. 
+
+![Print carriage adapter board](/DocumentationMedia/PrintCarriageInsert.png)
+
+<ins>Digikey</ins>
+| Description		| Part Number 				| Quantity|
+| ------------- 	|:-------------:			| -----:|
+| Ribbon Cable Mount	| [X](X)				| 1 	|
+
+<ins>Clippard</ins>
+| Description		| Part Number 																| Quantity|
+| ------------- 	|:-------------:															| -----:|
+| Solenoid 		| [NR3-2-12, Imperial, Vac to 30psi, 2-way NC, In line ports, 1/4-28 UNF port, 12V](https://www.clippard.com/part/NR3-2-12)		| 1	|
+
+<ins>Amazon</ins>
+| Description			| Part Number 								| Quantity|
+| ------------- 		|:-------------:							| -----:|
+| Nylon Rod 			| [Nylon Rod, 1/2" diameter, 1' length](https://a.co/d/fmmiPHx)		| 1	|
+| Copper-Clad Board		| [FR-4](https://a.co/d/aHfhtKA)					| 1 	|
+| Brass Printhead Set (4)	| [0.1mm x M6 thread](https://a.co/d/aySFkyX)				| 1 	|
+
+<ins>Cole Parmer</ins>
+| Description					| Part Number 																| Quantity|
+| ------------- 				|:-------------:															| -----:|
+| Odor Reservoir Cap				| [EW-12018-03](https://www.coleparmer.com/i/cole-parmer-vaplock-solvent-delivery-cap-two-1-4-28-ports-gl45-1-ea/1201803)		| 1	|
+| 1/8" Tubing to 1/4"-28 adapter (10 pack)	| [EW-12020-08](https://www.coleparmer.com/i/cole-parmer-vaplock-fitting-blue-pp-w-yellow-etfe-straight-compression-to-threaded-adapter-1-8-od-x-1-4-28-unf-m-10-pk/1202008)		| 1|
 
 ### Evaporation Tunnel
-asdf
+The plexiglass panels of the evaporation tunnel should be cut, the 3D printed components printed, and all assembled according to the .f3d file. The top tube mount should be connected to the exhaust tubing, and routed to an exhaust line. If additional flow is needed the exhaust fan can be used to increase the exhaust flow.
+
+<ins>Amazon</ins>
+| Description			| Part Number 					| Quantity|
+| ------------- 		|:-------------:				| -----:|
+| Exhaust Fan (optional)	| [MGN12H Rail](https://a.co/d/gDsAsOn)		| 1 	|
+| Exhaust Tubing 		| [MGN12H Rail](https://a.co/d/gDsAsOn)		| 1 	|
+
+<ins>Hardware Store (or Amazon, etc.)</ins>
+| Description			| Part Number 		| Quantity	|
+| ------------- 		|:-------------:	| -----:	|
+| 1/4" Acrylic Sheet Clear 	| na						| na 	|
 
 ### Behavior Chamber
-asdf
+The plexiglass panels should be cut, the 3D printed components printed, and all assembled according to the .f3d file. The top and bottom panels of the behavior chamber are made of glass sheets; the side of the bottom sheet (and optionally the top sheet) should be trimmed to fit the width of the chamber (249mm) (see .f3d file). The top cover panel can be attached to the front of the behavior chamber using two strips of tape, positioned on the edges past the side of the behavior chamber. 
+
+The inner sides of the behavior chamber acrylic sheets can be coated in fluon; this is most easily done by removing them from the behavior chamber, laying them flat on a counter, and applying the fluon using the brush dispenser in the parts list below. Before reapplying, the sides should be thoroughly cleaned using hot soap and water, and allowed to dry.
+
+<ins>Hardware Store (or Amazon, etc.)</ins>
+| Description			| Part Number 		| Quantity	|
+| ------------- 		|:-------------:	| -----:	|
+| 3/32" Glass Sheet (10" x 12")	| [Shape Glass](https://www.homedepot.com/p/10-in-x-12-in-x-0-09375-in-Clear-Glass-91012/300068325)			| 2 		|
+| 1/8" Acrylic Sheet White	| na			| na 		|
+| 1/4" Acrylic Sheet Clear	| na			| na 		|
+
+
+<ins>Amazon</ins>
+| Description			| Part Number 		| Quantity	|
+| Fluon				| [byFormica Fluon Plus](https://a.co/d/d54PUUA) | na 		|
 
 ### Driver
-asdf
+The plexiglass panels should be cut, the 3D printed components printed, and all assembled according to the .f3d file. The driver and guide rod assemblies, as well as the nylon bushings, were removed from the same HP Photosmart C6180 inkjet printer that supplied the print carriage. One repair was made by replacing the motor with a larger 12V motor removed from [this](https://a.co/d/cd3eFye) peristaltic pump assembly. However, a motor such as [this](https://a.co/d/8RF5Nmk) should also be compatible with the mounting bracket, and the wide range of speeds should enable a fine tuning of maximum speed against torque for the driver assembly.
 
 ### Camera Assembly
-asdf
+The aluminum extrusion sections should be cut, the 3D printed components printed, and all assembled according to the .f3d file. The logitech webcam base can be mounted using the 1/4" threaded rod and nut, enabling easy positioning above the behavior chamber.
+
+<ins>Amazon</ins>
+| Description			| Part Number 					| Quantity|
+| ------------- 		|:-------------:				| -----:|
+| Exhaust Fan 			| [MGN12H Rail](https://a.co/d/gDsAsOn)		| 1 	|
+
+<ins>Hardware Store (or Amazon, etc.)</ins>
+| Description			| Part Number 		| Quantity|
+| ------------- 		|:-------------:	| -----:|
+| 1/4" Threaded Rod 1 inch long	| na			| 1 	|
+| 1/4" Nuts			| na			| 1	|
+
 
 ### Backlight
 asdf
@@ -78,10 +198,10 @@ asdf
 types of printer (reference whatshisface), stepper vs encoder, etc.
 
 # Suggested directions for future expansion
-two printheads
-inkjet module
-stepper motor controls
-reward printer (behavior chamber front slot will need to be expanded)
+- Second printhead
+- Use of an inkjet module for higher precision trails (albeit with a more constrained odor panel)
+- Use of stepper motors instead of the PID controlled print carriage assembly.
+- Reward depositor or printer (behavior chamber front slot will need to be raised to avoid rewards being scraped off the paper towel before entering the behavior chamber)
 
 
 
