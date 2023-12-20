@@ -99,11 +99,11 @@ Assembly 4 holds the threaded rod.
 ### Print Carriage Assembly
 The print assembly is centered around the print carriage assembly removed from an HP Photosmart C6180 inkjet printer. The inkjet printing assembly is removed, and the "PrintCarriageInsert" is inserted in its place. 
 
-![Print carriage insert](/DocumentationMedia/PrintCarriageInsert.png)
+![Print carriage insert](/DocumentationMedia/PrintCarriageInsert.jpg)
 
 The linear encoder from the print carriage PCB is accessed by connecting to the quadrature encoder using the ribbon cable. This was achieved by producing a breakout board on a piece of FR-4 Copper Clad board, soldering on a compatible ribbon cable mount, and soldering on male 2.54 header pins (pictured below). However, soldering wires directly instead of the pins would reduce risk of accidental disconnection. The traces on the print carriage PCB can also be soldered to directly to avoid needing to construct an adapter. 
 
-![Print carriage adapter board](/DocumentationMedia/PrintCarriageInsert.png)
+![Print carriage adapter board](/DocumentationMedia/RibbonCableAdapter.jpg)
 
 <ins>Amazon</ins>
 | Description			| Part Number 								| Quantity|
@@ -113,11 +113,11 @@ The linear encoder from the print carriage PCB is accessed by connecting to the 
 <ins>Digikey</ins>
 | Description		| Part Number 				| Quantity|
 | ------------- 	|:-------------:			| -----:|
-| Ribbon Cable Mount	| [X](X)				| 1 	|
+| Ribbon Cable Mount	| 18 Pin Flex PCB Mount			| 1 	|
 
 ### Print System Assembly
 The pressurized print system is comprised of four parts connected in sequence:
- - Air pressure regulator
+ - Air pressure regulator 
  - Print solution reservoir
  - Solenoid valve
  - Printhead
