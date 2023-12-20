@@ -250,7 +250,7 @@ The circuit layout and PCB design are provided in the form of a KiCAD project. A
 The software is provided in the form of a python script and an embedded program for the Teensy 3.5. 
 
 ### Embedded Firmware
-The embedded firmware can be uploaded using the [Arduino software](https://www.arduino.cc/en/software). 
+The embedded firmware can be uploaded using the [Arduino IDE](https://www.arduino.cc/en/software). 
 
 ### Python Software Script
 The python software script contains several values that must be configured on the experimental computer in order for communication with the microcontroller (and thereby control over the treadmill) to be achieved. Namely, the serial port and camera input must be specified correctly.
