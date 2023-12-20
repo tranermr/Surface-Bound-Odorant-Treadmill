@@ -192,7 +192,7 @@ The inner sides of the behavior chamber acrylic sheets can be coated in fluon; t
 <ins>Amazon</ins>
 | Description			| Part Number 		| Quantity	|
 | ------------- 		|:-------------:	| -----:	|
-| Fluon				| [byFormica Fluon Plus](https://a.co/d/d54PUUA) | na 		|
+| Fluon				| [byFormica Fluon Plus](https://a.co/d/d54PUUA) | 1 		|
 
 ### Driver
 The plexiglass panels should be cut, the 3D printed components printed, and all assembled according to the .f3d file. The driver and guide rod assemblies, as well as the nylon bushings, were removed from the same HP Photosmart C6180 inkjet printer that supplied the print carriage. One repair was made by replacing the motor with a larger 12V motor removed from [this](https://a.co/d/cd3eFye) peristaltic pump assembly. However, a motor such as [this](https://a.co/d/8RF5Nmk) should also be compatible with the mounting bracket, and the wide range of speeds would enable a fine tuning of maximum speed against torque for the driver assembly.
