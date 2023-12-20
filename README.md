@@ -86,7 +86,7 @@ Assembly 4 provides an easy way to rotate the threaded rod, by locking the wing 
 The alignment assemblies consist of 1x 1' threaded rod, with the following parts threaded on in sequence, pictured below: 
  - Assembly 1: wing nut - "PaperTowelHolderBrace" - hex nut 
  - Assembly 2: hex nut - "PaperTowelInsertInner" - hex nut 
- - Assembly 3: hex nut - "PaperTowelInsertInner" - fender washer - spring - fender washer - hex nut - hex nut
+ - Assembly 3: hex nut - hex nut - "PaperTowelInsertInner" - fender washer - spring - fender washer - hex nut - hex nut
  - Assembly 4: hex nut - "PaperTowelHolderBrace" - hex nut 
 
 ![Paper towel suspension rod](/DocumentationMedia/PaperTowelRod.png)
