@@ -51,38 +51,24 @@ def calcSpeed(verbose, width, cap, savedir, imDatafile, imCounter, outIter, nTif
     frame = cap.read()[1]
 
     timestamp = time.time()  # temporary until better frame timestamp is figured out
-    # frame = frame[:, 240:1680]
-    # frame2 = frame[170:865, 260:1670]
-    # gray = cv2.cvtColor(frame2, cv2.COLOR_BGR2GRAY)
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    # bw = cv2.threshold(gray, 80, 255, cv2.THRESH_BINARY_INV)[1] # Backlight off
     bw = cv2.threshold(gray, 20, 255, cv2.THRESH_BINARY_INV)[1] # Backlight on
     # bw = cv2.threshold(gray, 80, 255, cv2.THRESH_BINARY_INV)[1]  # IR Backlight
-    # bw = cv2.threshold(gray, 40, 255, cv2.THRESH_BINARY_INV)[1]  # IR Backlight
-
-    # Erode image
-    # kernel = np.ones((5, 5), np.uint8)
-    # erosion = cv2.erode(bw, kernel, iterations=1)
 
     # calculate x,y coordinate of center
     try:
         contours = cv2.findContours(bw, 1, 1)[0]
-        # contours = cv2.findContours(erosion, 1, 1)[0]
         c = max(contours, key=cv2.contourArea)
         M = cv2.moments(c)  # calculate moments of binary image
-
-        # M = cv2.moments(erosion)  # calculate moments of binary image
         cX2 = int(M["m10"] / M["m00"])
         cY2 = int(M["m01"] / M["m00"])
         center = (cX2, cY2)
-        # print(center)
         # Calculate speed setting
         if cX2 > round(width / 2):
             speed = 0
         else:
             normalX = scale * (width / 2 - cX2) / width
             speed = math.exp(normalX) - math.exp(0)
-        # print(speed)
 
     except:
         print("Locust not seen")
@@ -91,27 +77,13 @@ def calcSpeed(verbose, width, cap, savedir, imDatafile, imCounter, outIter, nTif
         center = (cX2, cY2)
         speed = 0 # Stop treadmill if locust disappeared
 
-    # if verbose:
-        # Edit frame and show on screen
-        # masked = cv2.bitwise_and(frame, frame, mask=erosion)
-        # drawn = cv2.circle(frame, center, 5, (0, 255, 0), 2)
-        # cv2.imshow("windowName", drawn)
-
-    # drawn = cv2.circle(frame, center, 5, (0, 255, 0), 2)
-    # cv2.imshow("windowName", drawn)
-    # cv2.imshow("windowName", frame)
-    # cv2.imshow("windowName", bw)
     cv2.waitKey(1)
 
     # Save image to file
-    # cv2.imwrite(savedir + '/' + str(timestamp) + '.jpg', frame)  # more compact
-
-    # tiff version
     imCounter = imCounter+1
     if imCounter == nTiffIms:
         outIter = outIter+1
         imCounter = 0
-    # print(imCounter)
 
     try:
         tiffile.imwrite(savedir + '/images' + str(outIter) + '.tif', frame, photometric='rgb', compression='jpeg', append=True)
@@ -138,17 +110,12 @@ def calcSpeed(verbose, width, cap, savedir, imDatafile, imCounter, outIter, nTif
         except:
             print('savefile permission denied, skipping')
 
-
-
-
     return (speed, imCounter, outIter)
 
 
 def serSpeed(speed, ser, timeLast, serInterval):
     temp = time.time()
     if (temp - timeLast) > serInterval:
-        # print("Speed: " + str(round(speed)))
-        speed = 10
         tempString = ',1,' + str(round(speed))
         strLen = len(tempString) + 2  # hardcoded to two digits max length
         if (strLen < 10):
@@ -237,8 +204,7 @@ def serMain(savedir, date, speedRead):
     # Initialize wrapper object for efficient line reading
     readObj = ReadLine(ser)
 
-    # Data Saving stuff
-    # dataStore = DataStoreClass()  # Initialize data structure
+    # Data Saving Settings
     filename = savedir + '/data_' + date + '.csv'
     datafile = open(filename, 'a')
 
@@ -251,7 +217,6 @@ def serMain(savedir, date, speedRead):
     #          [0, -0.077, 4600, 40000]]
     # route = [[0, 0.2, 1600, 15000],
     #          [0, -0.2, 4700, 15000]]
-
 
     # Straight route
     # route = [[0, 0, 3100, 40000],
@@ -307,8 +272,6 @@ def serMain(savedir, date, speedRead):
                 print('Unable to read serial input')
         # Debugging check to ensure that all messages are being processed:
         # print("Ser Buffer: " + str(ser.inWaiting()))
-
-
 
 if __name__ == "__main__":
     # Initialize save directory

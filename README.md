@@ -68,7 +68,7 @@ The paper towel dispenser is constructed of two vertical mounting bars. The pape
 <ins>Assembly of left, right alignment adjustments.</ins>
 In the following assembly guides 3D printed components are placed in quotes and referred to by their body names in the Fusion 360 file.
 
-The alignment assemblies consist of 1x 1' threaded rod, with the following parts threaded on in sequence, pictured below: 
+The alignment assemblies consist of a 1' threaded rod, with the following parts threaded on in sequence, pictured below: 
  - Assembly 1: hex nut - "AlignmentScrewInner" - 6202 bearing - "AlignmentScrewInner" - hex nut 
  - Assembly 2: hex nut - spring - hex nut 
  - Assembly 3: hex nut - "AlignmentScrewInner" - 6202 bearing - "AlignmentScrewInner" - hex nut 
@@ -83,7 +83,7 @@ Assembly 4 provides an easy way to rotate the threaded rod, by locking the wing 
 ![Vertical bar linkage - Assembly 2](/DocumentationMedia/AntiBacklashAssembly.png)
 
 <ins>Assembly of paper towel suspension rod.</ins>
-The alignment assemblies consist of 1x 1' threaded rod, with the following parts threaded on in sequence, pictured below: 
+The alignment assemblies consist of a 1' threaded rod, with the following parts threaded on in sequence, pictured below: 
  - Assembly 1: wing nut - "PaperTowelHolderBrace" - hex nut 
  - Assembly 2: hex nut - "PaperTowelInsertInner" - hex nut 
  - Assembly 3: hex nut - hex nut - "PaperTowelInsertInner" - fender washer - spring - fender washer - hex nut - hex nut
@@ -101,8 +101,7 @@ The print assembly is centered around the print carriage assembly removed from a
 
 ![Print carriage insert](/DocumentationMedia/PrintCarriageInsert.png)
 
-The linear encoder from the print carriage PCB is accessed by connecting to the following pins on the ribbon cable: X X X X 
-This was achieved by producing a breakout board on a piece of FR-4 Copper Clad board, soldering on a compatible ribbon cable mount, and soldering on male 2.54 header pins (pictured below). However, soldering wires directly instead of the pins would reduce risk of accidental disconnection. The traces on the print carriage PCB can also be soldered to directly to avoid needing to construct an adapter. 
+The linear encoder from the print carriage PCB is accessed by connecting to the quadrature encoder using the ribbon cable. This was achieved by producing a breakout board on a piece of FR-4 Copper Clad board, soldering on a compatible ribbon cable mount, and soldering on male 2.54 header pins (pictured below). However, soldering wires directly instead of the pins would reduce risk of accidental disconnection. The traces on the print carriage PCB can also be soldered to directly to avoid needing to construct an adapter. 
 
 ![Print carriage adapter board](/DocumentationMedia/PrintCarriageInsert.png)
 
@@ -133,7 +132,8 @@ Note 2: If the holes are centered (e.g. drilled on a lathe), multiple printheads
 <ins>Full assembly</ins>
 The regulator is assembled by connecting 1/4" push connect fittings into the inlet and outlet ports. The inlet port is connected to a pressurized air system, and the outlet is connected to the 1/4" tubing. A length of 1/8" Kynar Flex tubing is coated with superglue, and rapidly inserted 5-10cm into the 1/4" tubing, and allowed to dry. The 1/8" tubing is then connected to the Odor Reservoir Cap, and secured in place using the 1/4"-28 adapter with the tubing protruding just inside the cap. A second length of tubing is inserted to the bottom of the flask and similarly secured. The other end of the second length of tubing is then inserted into the inlet port of the Clippard solenoid valve and secured. The outlet port of the solenoid is connected to a third length of tubing, sufficient to run from the position of the solenoid to the print carriage at all points of travel. This will depend on the location where the solenoid is mounted. The third length of tubing is then connected to the printhead using the same 1/4"-28 adapters, and the printhead is inserted into the print carriage to the depth where it just contacts the surface of the paper towel.
 
-MISSING PARTS X X
+MISSING PARTS 
+XX X x x
 Regulator and adapters
 
 <ins>Clippard</ins>
@@ -242,9 +242,13 @@ The circuit layout and PCB design are provided in the form of a KiCAD project. A
 | TIP41C Transistor		| Tip41C Through Hole	| 2 	|
 | Diode				| 1N4002 Through Hole	| 2 	|
 | Filter Capacitor		| 4.7uF Through Hole	| 11 	|
+| Limit Switch Bias Resistor 1	| 100 Ohm SMD	 	| 1 	|
+| Limit Switch Bias Resistor 2	| 1.2 KOhm SMD	 	| 1 	|
 | Optoisolator Filter Cap	| 1uF SMD		| 10 	|
-| Optoisolator LED Resistor	| X			| 1 	|
-| Optoisolator Bias Resistor	| X			| 1 	|
+| Optoisolator LED Resistor	| 360 Ohm SMD		| 10 	|
+| Optoisolator Bias Resistor	| X Ohm SMD		| 10 	|
+
+Note: Only two of the four capacitor slots around the voltage regulator are populated. The extra slots can be used if additional filtering is required.
 
 ## Software Components
 The software is provided in the form of a python script and an embedded program for the Teensy 3.5. 
@@ -253,9 +257,17 @@ The software is provided in the form of a python script and an embedded program 
 The embedded firmware can be uploaded using the [Arduino IDE](https://www.arduino.cc/en/software). 
 
 ### Python Software Script
-The python software script contains several values that must be configured on the experimental computer in order for communication with the microcontroller (and thereby control over the treadmill) to be achieved. Namely, the serial port and camera input must be specified correctly.
+The python software script contains several values that must be configured on the experimental computer in order for communication with the microcontroller (and thereby control over the treadmill) to be achieved. Namely, the serial port and camera input must be specified correctly. To do this 
 
-In addition, the threshold for binarizing the image in order to track the locust must be configured by adjusting the X value. Note that this will change when switching between visible and IR backlighting.
+cap = cv2.VideoCapture(0) in camMain can be set to different camera inputs by changing the '0' to a different number corresponding to the desired input.
+
+ser = serial.Serial('COM4', 2000000, writeTimeout=0) in serMain can be configured to read from a different com port, e.g. 'COM3', and should be configured to match the serial port on which the treadmill is connected.
+
+In addition, the threshold for binarizing the image in order to track the locust must be configured by adjusting the threshold value in the calcSpeed function. Note that this will change when switching between visible and IR backlighting. This can be done by modifying the value of '20' in the below code line to a value found to effectively isolate the animal on the treadmill with the given backlight. 
+
+bw = cv2.threshold(gray, 20, 255, cv2.THRESH_BINARY_INV)[1]
+
+If switching between visible and IR conditions, two versions of the above line can be written, and the unused one commented out prior to running the treadmill.
 
 # Considerations for building
 If you are considering building this treadmill there are several considerations that you may want to take into account. The first is whether greater flexibility of odorants, or the width and precision of the trail are more important for your purposes. If some odorants that are incompatible with an inkjet cartridge will be used, then the pressurized reservoir system described in the Print System Assembly section will be the most suitable. However, if the odor panel is limited to odorants that would be compatible with a print cardtridge, then repurposing a print cartridge may provide more consistent and smaller trails. Such a method was used by Dr. Venkatesh Murthy to produce odor trails for mice (see odor trails sections in the [DeepLabCut paper](https://www.nature.com/articles/s41593-018-0209-y#Ack1) by Mathis et al.).
