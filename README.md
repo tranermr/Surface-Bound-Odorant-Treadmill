@@ -31,8 +31,7 @@ The treadmill frame is made of 20mm extruded aluminum (2020). The recommended pa
 <ins>Grainger</ins>
 | Description			| Part Number 		| Quantity|
 | ------------- 		|:-------------:	| -----:|
-| Bolts M5-0.8 10mm (50 Pack)	| 53GJ15	 	| 3 	|
-| Bolts M5-0.8 35mm (50 Pack) 	| 53GJ20		| 3 	|
+| Bolts M5-0.8 10mm (50 Pack)	| 53GJ15	 	| 5 	|
 
 <ins>Amazon</ins>
 | Description			| Part Number 		| Quantity|
@@ -107,21 +106,47 @@ This was achieved by producing a breakout board on a piece of FR-4 Copper Clad b
 
 ![Print carriage adapter board](/DocumentationMedia/PrintCarriageInsert.png)
 
+<ins>Amazon</ins>
+| Description			| Part Number 								| Quantity|
+| ------------- 		|:-------------:							| -----:|
+| Copper-Clad Board		| [FR-4](https://a.co/d/aHfhtKA)					| 1 	|
+
 <ins>Digikey</ins>
 | Description		| Part Number 				| Quantity|
 | ------------- 	|:-------------:			| -----:|
 | Ribbon Cable Mount	| [X](X)				| 1 	|
 
+### Print System Assembly
+The pressurized print system is comprised of four parts connected in sequence:
+ - Air pressure regulator
+ - Print solution reservoir
+ - Solenoid valve
+ - Printhead
+
+<ins>Printhead assembly</ins>
+The printhead construction is the most challenging to fabricate. A 15mm segment is cut from the nylon rod, and drilled using a 6mm bit. One end is tapped to M6 to accomodate the brass printhead, and the other is drilled with a 1/4" bit and tapped to 1/4"-28 to accomodate the adapter for the 1/8" tubing. The printhead threads are wrapped with PTFE tape, and screwed into the nylon segment, taking care that excess PTFE tape is removed prior to insertion. 
+
+Note: If a lathe is available it will greatly ease accurate drilling of the hole, and cutting of the segments. 
+Note 2: If the holes are centered (e.g. drilled on a lathe), multiple printheads can be made to ease cleaning and clearing of any clogs that may occur.
+
+<ins>Full assembly</ins>
+The regulator is assembled by connecting 1/4" push connect fittings into the inlet and outlet ports. The inlet port is connected to a pressurized air system, and the outlet is connected to the 1/4" tubing. A length of 1/8" Kynar Flex tubing is coated with superglue, and rapidly inserted 5-10cm into the 1/4" tubing, and allowed to dry. The 1/8" tubing is then connected to the Odor Reservoir Cap, and secured in place using the 1/4"-28 adapter with the tubing protruding just inside the cap. A second length of tubing is inserted to the bottom of the flask and similarly secured. The other end of the second length of tubing is then inserted into the inlet port of the Clippard solenoid valve and secured. The outlet port of the solenoid is connected to a third length of tubing, sufficient to run from the position of the solenoid to the print carriage at all points of travel. This will depend on the location where the solenoid is mounted. The third length of tubing is then connected to the printhead using the same 1/4"-28 adapters, and the printhead is inserted into the print carriage to the depth where it just contacts the surface of the paper towel.
+
+MISSING PARTS
+Regulator and adapters
+m6 tap
+1/4"-28 tap
+
+
 <ins>Clippard</ins>
 | Description		| Part Number 																| Quantity|
 | ------------- 	|:-------------:															| -----:|
-| Solenoid 		| [NR3-2-12, Imperial, Vac to 30psi, 2-way NC, In line ports, 1/4-28 UNF port, 12V](https://www.clippard.com/part/NR3-2-12)		| 1	|
+| Solenoid valve	| [NR3-2-12, Imperial, Vac to 30psi, 2-way NC, In line ports, 1/4-28 UNF port, 12V](https://www.clippard.com/part/NR3-2-12)		| 1	|
 
 <ins>Amazon</ins>
 | Description			| Part Number 								| Quantity|
 | ------------- 		|:-------------:							| -----:|
 | Nylon Rod 			| [Nylon Rod, 1/2" diameter, 1' length](https://a.co/d/fmmiPHx)		| 1	|
-| Copper-Clad Board		| [FR-4](https://a.co/d/aHfhtKA)					| 1 	|
 | Brass Printhead Set (4)	| [0.1mm x M6 thread](https://a.co/d/aySFkyX)				| 1 	|
 
 <ins>Cole Parmer</ins>
@@ -129,6 +154,17 @@ This was achieved by producing a breakout board on a piece of FR-4 Copper Clad b
 | ------------- 				|:-------------:															| -----:|
 | Odor Reservoir Cap				| [EW-12018-03](https://www.coleparmer.com/i/cole-parmer-vaplock-solvent-delivery-cap-two-1-4-28-ports-gl45-1-ea/1201803)		| 1	|
 | 1/8" Tubing to 1/4"-28 adapter (10 pack)	| [EW-12020-08](https://www.coleparmer.com/i/cole-parmer-vaplock-fitting-blue-pp-w-yellow-etfe-straight-compression-to-threaded-adapter-1-8-od-x-1-4-28-unf-m-10-pk/1202008)		| 1|
+
+<ins>VWR</ins>
+| Description					| Part Number 																| Quantity|
+| ------------- 				|:-------------:															| -----:|
+|Transfer Tubing, Kynar Flex™ 2750 PVDF, 1/16" ID x 1/8" OD; 50 ft |  [MFLX95100-01](https://us.vwr.com/store/product/39208964/masterflex-transfer-tubing-kynar-flextm-2750-pvdf-avantor) | 1 |
+
+<ins>Grainger</ins>
+| Description					| Part Number 																| Quantity|
+| ------------- 				|:-------------:															| -----:|
+|PVC Tubing 1/4"OD 1/8"ID |  [2LPT1](https://www.grainger.com/product/TYGON-Tubing-Tygon-S3-B-44-3-2LPT1) | 1 |
+|PTFE Tape|  [3PDL5](https://www.grainger.com/product/ANTI-SEIZE-TECHNOLOGY-ANTI-SEIZE-TECH-Thread-Sealant-3PDL5) | 1 |
 
 ### Evaporation Tunnel
 The plexiglass panels of the evaporation tunnel should be cut, the 3D printed components printed, and all assembled according to the .f3d file. The top tube mount should be connected to the exhaust tubing, and routed to an exhaust line. If additional flow is needed the exhaust fan can be used to increase the exhaust flow.
@@ -142,7 +178,7 @@ The plexiglass panels of the evaporation tunnel should be cut, the 3D printed co
 <ins>Hardware Store (or Amazon, etc.)</ins>
 | Description			| Part Number 		| Quantity	|
 | ------------- 		|:-------------:	| -----:	|
-| 1/4" Acrylic Sheet Clear 	| na						| na 	|
+| 1/4" Acrylic Sheet Clear 	| na			| na 		|
 
 ### Behavior Chamber
 The plexiglass panels should be cut, the 3D printed components printed, and all assembled according to the .f3d file. The top and bottom panels of the behavior chamber are made of glass sheets; the side of the bottom sheet (and optionally the top sheet) should be trimmed to fit the width of the chamber (249mm) (see .f3d file). The top cover panel can be attached to the front of the behavior chamber using two strips of tape, positioned on the edges past the side of the behavior chamber. 
@@ -156,13 +192,12 @@ The inner sides of the behavior chamber acrylic sheets can be coated in fluon; t
 | 1/8" Acrylic Sheet White	| na			| na 		|
 | 1/4" Acrylic Sheet Clear	| na			| na 		|
 
-
 <ins>Amazon</ins>
 | Description			| Part Number 		| Quantity	|
 | Fluon				| [byFormica Fluon Plus](https://a.co/d/d54PUUA) | na 		|
 
 ### Driver
-The plexiglass panels should be cut, the 3D printed components printed, and all assembled according to the .f3d file. The driver and guide rod assemblies, as well as the nylon bushings, were removed from the same HP Photosmart C6180 inkjet printer that supplied the print carriage. One repair was made by replacing the motor with a larger 12V motor removed from [this](https://a.co/d/cd3eFye) peristaltic pump assembly. However, a motor such as [this](https://a.co/d/8RF5Nmk) should also be compatible with the mounting bracket, and the wide range of speeds should enable a fine tuning of maximum speed against torque for the driver assembly.
+The plexiglass panels should be cut, the 3D printed components printed, and all assembled according to the .f3d file. The driver and guide rod assemblies, as well as the nylon bushings, were removed from the same HP Photosmart C6180 inkjet printer that supplied the print carriage. One repair was made by replacing the motor with a larger 12V motor removed from [this](https://a.co/d/cd3eFye) peristaltic pump assembly. However, a motor such as [this](https://a.co/d/8RF5Nmk) should also be compatible with the mounting bracket, and the wide range of speeds would enable a fine tuning of maximum speed against torque for the driver assembly.
 
 ### Camera Assembly
 The aluminum extrusion sections should be cut, the 3D printed components printed, and all assembled according to the .f3d file. The logitech webcam base can be mounted using the 1/4" threaded rod and nut, enabling easy positioning above the behavior chamber.
@@ -170,7 +205,7 @@ The aluminum extrusion sections should be cut, the 3D printed components printed
 <ins>Amazon</ins>
 | Description			| Part Number 					| Quantity|
 | ------------- 		|:-------------:				| -----:|
-| Exhaust Fan 			| [MGN12H Rail](https://a.co/d/gDsAsOn)		| 1 	|
+| Logitech C920S		| [C920S](https://a.co/d/djdxm9s)	| 1 	|
 
 <ins>Hardware Store (or Amazon, etc.)</ins>
 | Description			| Part Number 		| Quantity|
@@ -178,9 +213,22 @@ The aluminum extrusion sections should be cut, the 3D printed components printed
 | 1/4" Threaded Rod 1 inch long	| na			| 1 	|
 | 1/4" Nuts			| na			| 1	|
 
-
 ### Backlight
-asdf
+The backlight is comprised of a 1/4" thick plexiglass base upon which IR and white LED strips are alternately layed. The LED strips are soldered together such that either the white (visible) or IR (non-visible) backlight can be used. The light diffuser panels should be cut according to the .f3d file, and can be inserted at multiple levels in the diffuser mount, up to a maximum of 6 panels. 1-2 sheets of paper should be layed over the top of diffuser panels to better distribute the illumination.
+
+<ins>Hardware Store (or Amazon, etc.)</ins>
+| Description				| Part Number 						| Quantity|
+| ------------- 			|:-------------:					| -----:|
+| 1/4" Acrylic Sheet Clear		| na							| 1 	|
+| IR LED Strip				| [SMD3528 850nm LED Strip](https://a.co/d/do7MLOz)	| 1	|
+| White LED Strip			| [SMD5050 White LED Strip](https://a.co/d/cHSYJyx)	| 1	|
+| Light Diffuser Sheet			| [Diffuser](https://www.homedepot.com/p/OPTIX-23-75-in-x-47-75-in-Clear-Plastic-Acrylic-Prismatic-Ceiling-Light-Panel-1A20083A/100550880)	| na	|
+| White Printer Paper (8.5"x14")	| [Paper](https://a.co/d/dwqtg2p)			| 1	|
+
+<ins>Grainger</ins>
+| Description			| Part Number 		| Quantity	|
+| ------------- 		|:-------------:	| -----:	|
+| Bolts M5-0.8 35mm (50 Pack) 	| 53GJ20		| 1 		|
 
 ## Electrical Components
 asdf
