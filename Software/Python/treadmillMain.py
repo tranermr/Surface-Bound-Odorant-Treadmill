@@ -270,8 +270,6 @@ def serMain(savedir, date, speedRead):
                     print("Failed parsing line:" + line)
             except:
                 print('Unable to read serial input')
-        # Debugging check to ensure that all messages are being processed:
-        # print("Ser Buffer: " + str(ser.inWaiting()))
 
 if __name__ == "__main__":
     # Initialize save directory
