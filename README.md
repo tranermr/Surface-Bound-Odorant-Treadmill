@@ -204,7 +204,7 @@ The aluminum extrusion sections should be cut, the 3D printed components printed
 <ins>Amazon</ins>
 | Description			| Part Number 					| Quantity|
 | ------------- 		|:-------------:				| -----:|
-| Logitech C920S		| [C920S](https://a.co/d/djdxm9s)	| 1 	|
+| Logitech C920S		| [C920S](https://a.co/d/djdxm9s)		| 1 	|
 
 <ins>Hardware Store (or Amazon, etc.)</ins>
 | Description			| Part Number 		| Quantity|
