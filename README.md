@@ -191,6 +191,7 @@ The inner sides of the behavior chamber acrylic sheets can be coated in fluon; t
 
 <ins>Amazon</ins>
 | Description			| Part Number 		| Quantity	|
+| ------------- 		|:-------------:	| -----:	|
 | Fluon				| [byFormica Fluon Plus](https://a.co/d/d54PUUA) | na 		|
 
 ### Driver
