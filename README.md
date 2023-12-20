@@ -242,7 +242,7 @@ The circuit layout and PCB design are provided in the form of a KiCAD project. A
 | Limit Switch Bias Resistor 2	| 1.2 KOhm SMD	 	| 1 	|
 | Optoisolator Filter Cap	| 1uF SMD		| 10 	|
 | Optoisolator LED Resistor	| 360 Ohm SMD		| 10 	|
-| Optoisolator Bias Resistor	| X Ohm SMD		| 10 	|
+| Optoisolator Bias Resistor	| 1 KOhm SMD		| 10 	|
 
 Note: Only two of the four capacitor slots around the voltage regulator are populated. The extra slots can be used if additional filtering is required.
 
