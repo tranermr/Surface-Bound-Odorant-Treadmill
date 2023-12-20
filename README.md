@@ -127,6 +127,7 @@ The pressurized print system is comprised of four parts connected in sequence:
 The printhead construction is the most challenging to fabricate. A 15mm segment is cut from the nylon rod, and drilled using a 6mm bit. One end is tapped to M6 to accomodate the brass printhead, and the other is drilled with a 1/4" bit and tapped to 1/4"-28 to accomodate the adapter for the 1/8" tubing. The printhead threads are wrapped with PTFE tape, and screwed into the nylon segment, taking care that excess PTFE tape is removed prior to insertion. 
 
 Note: If a lathe is available it will greatly ease accurate drilling of the hole, and cutting of the segments. 
+
 Note 2: If the holes are centered (e.g. drilled on a lathe), multiple printheads can be made to ease cleaning and clearing of any clogs that may occur.
 
 <ins>Full assembly</ins>
