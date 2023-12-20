@@ -1,6 +1,6 @@
 # Surface-Bound-Odorant-Treadmill
 
-One of the important subsets of odors sources used in olfactory navigation is surface-bound sources, which can broadly take the form of point sources or trails. Here, we present an automated treadmill design capable of dynamically printing odor trails of arbitrary lengths and configurations, and with closed-loop control of speed based on the animal’s movement. This design is presented and the utility demonstrated in a corresponding paper studying surface-bound odor trail interactions in locusts (in submission).The uploaded design incorporates some improvements not reflected in the version used in the published paper (i.e. the modification of some components to reduce paper jams, and quality of life improvements). The design is provided in four directories, containing the mechanical components, the electrical component design, the software and firmware for operation, and matlab scripts for parsing the output files.
+One of the important subsets of odors sources used in olfactory navigation is surface-bound sources, which can broadly take the form of point sources or trails. Here, we present an automated treadmill design capable of dynamically printing odor trails of arbitrary lengths and configurations, and with closed-loop control of speed based on the animal’s movement. This design is presented and the utility demonstrated in a corresponding paper studying surface-bound odor trail interactions in locusts (in submission).The uploaded design incorporates some improvements not reflected in the version used in the published paper (i.e. the modification of some components to reduce paper jams, and quality of life improvements). The design is provided in four directories, containing the mechanical components, the electrical component design, and the software and firmware for operation.
 
 ![Photo of assembled treadmill](/DocumentationMedia/TreadmillPublishedDesign.png)
 
@@ -134,9 +134,6 @@ The regulator is assembled by connecting 1/4" push connect fittings into the inl
 
 MISSING PARTS X X
 Regulator and adapters
-m6 tap
-1/4"-28 tap
-
 
 <ins>Clippard</ins>
 | Description		| Part Number 																| Quantity|
@@ -231,21 +228,39 @@ The backlight is comprised of a 1/4" thick plexiglass base upon which IR and whi
 | Bolts M5-0.8 35mm (50 Pack) 	| 53GJ20		| 1 		|
 
 ## Electrical Components
-asdf
+The circuit layout and PCB design are provided in the form of a KiCAD project. A parts list is provided below:
+
+<ins>Parts List</ins>
+| Description		| Part Number 			| Quantity|
+| ------------- 	|:-------------:		| -----:|
+| Teensy 3.5			| Teensy 3.5		| 1 	|
+| 5V Regulator			| L7805CV Through Hole	| 2 	|
+| Optoisolator			| 6N137 Through Hole	| 10 	|
+| Hex Inverter			| SN74HC14N Through Hole| 2 	|
+| TIP41C Transistor		| Tip41C Through Hole	| 2 	|
+| Diode				| 1N4002 Through Hole	| 2 	|
+| Filter Capacitor		| 4.7uF Through Hole	| 11 	|
+| Optoisolator Filter Cap	| 1uF SMD		| 10 	|
+| Optoisolator LED Resistor	| X			| 1 	|
+| Optoisolator Bias Resistor	| X			| 1 	|
 
 ## Software Components
-asdf
+The software is provided in the form of a python script and an embedded program for the Teensy 3.5. 
 
 ### Embedded Firmware
-asdf
+The embedded firmware can be uploaded using the [Arduino software](https://www.arduino.cc/en/software). 
 
 ### Python Software Script
-asdf
+The python software script contains several values that must be configured on the experimental computer in order for communication with the microcontroller (and thereby control over the treadmill) to be achieved. Namely, the serial port and camera input must be specified correctly.
+
+In addition, the threshold for binarizing the image in order to track the locust must be configured by adjusting the X value. Note that this will change when switching between visible and IR backlighting.
 
 # Considerations for building
-types of printer (reference whatshisface), stepper vs encoder, etc.
+If you are considering building this treadmill there are several considerations that you may want to take into account. The first is whether greater flexibility of odorants, or the width and precision of the trail are more important for your purposes. If some odorants that are incompatible with an inkjet cartridge will be used, then the pressurized reservoir system described in the Print System Assembly section will be the most suitable. However, if the odor panel is limited to odorants that would be compatible with a print cardtridge, then repurposing a print cartridge may provide more consistent and smaller trails. Such a method was used by Dr. Venkatesh Murthy to produce odor trails for mice (see odor trails sections in the [DeepLabCut paper](https://www.nature.com/articles/s41593-018-0209-y#Ack1) by Mathis et al.).
 
-# Suggested directions for future expansion
+Another consideration is whether to use the optical encoder system used here for the treadmill and print carriage positions. While highly precise, stepper motors likely would produce sufficiently accurate positioning, and may be easier to obtain and configure. This is especially useful if considering expanding the treadmill by adding a second printhead or a system for depositing rewards on the trail (see Suggested Directions for Future Modifications and Expansions) given that the Teensy 3.5 only has two hardware quadrature decoders, both of which are already allocated to the belt encoder and print carriage encoders. Furthermore, if hardware quadrature decoding is not required it would also be possible to utilize the faster Teensy 4.x series microcontrollers or other alternatives.
+
+# Suggested Directions for Future Modifications and Expansions
 - Second printhead
 - Use of an inkjet module for higher precision trails (albeit with a more constrained odor panel)
 - Use of stepper motors instead of the PID controlled print carriage assembly.
