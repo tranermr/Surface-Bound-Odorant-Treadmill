@@ -132,7 +132,7 @@ Note 2: If the holes are centered (e.g. drilled on a lathe), multiple printheads
 <ins>Full assembly</ins>
 The regulator is assembled by connecting 1/4" push connect fittings into the inlet and outlet ports. The inlet port is connected to a pressurized air system, and the outlet is connected to the 1/4" tubing. A length of 1/8" Kynar Flex tubing is coated with superglue, and rapidly inserted 5-10cm into the 1/4" tubing, and allowed to dry. The 1/8" tubing is then connected to the Odor Reservoir Cap, and secured in place using the 1/4"-28 adapter with the tubing protruding just inside the cap. A second length of tubing is inserted to the bottom of the flask and similarly secured. The other end of the second length of tubing is then inserted into the inlet port of the Clippard solenoid valve and secured. The outlet port of the solenoid is connected to a third length of tubing, sufficient to run from the position of the solenoid to the print carriage at all points of travel. This will depend on the location where the solenoid is mounted. The third length of tubing is then connected to the printhead using the same 1/4"-28 adapters, and the printhead is inserted into the print carriage to the depth where it just contacts the surface of the paper towel.
 
-MISSING PARTS
+MISSING PARTS X X
 Regulator and adapters
 m6 tap
 1/4"-28 tap
